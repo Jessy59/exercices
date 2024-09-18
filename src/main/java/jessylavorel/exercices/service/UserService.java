@@ -1,7 +1,9 @@
 package jessylavorel.exercices.service;
 
+import jessylavorel.exercices.dto.Genre;
 import jessylavorel.exercices.dto.Person;
 import org.apache.logging.log4j.util.Strings;
+import org.aspectj.weaver.patterns.PerObject;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -13,25 +15,29 @@ import java.util.List;
  */
 public class UserService {
 
-    private static final int ADULT_AGE_LIMIT = 18;
     private static final List<Person> PERSONS = new ArrayList<Person>() {
         {
-            add(Person.builder().number(1).lastName("Dupont").firstName("Jean").age(40).build());
-            add(Person.builder().number(1).lastName("Cristal").firstName("Alice").age(15).build());
-            add(Person.builder().number(1).lastName("Gamelin").firstName("Dexter").age(12).build());
-            add(Person.builder().number(1).lastName("Beaudry").firstName("Nicole").age(24).build());
+            add(Person.builder().number(1).lastName("Dupont").firstName("Jean").age(40).genre(Genre.M).build());
+            add(Person.builder().number(1).lastName("Cristal").firstName("Alice").age(15).genre(Genre.F).build());
+            add(Person.builder().number(1).lastName("Gamelin").firstName("Dexter").age(12).genre(Genre.UNKNOWN).build());
+            add(Person.builder().number(1).lastName("Beaudry").firstName("Nicole").age(24).genre(Genre.UNKNOWN).build());
         }
     };
 
-    public List<Person> getAllPersons() {
-        return PERSONS;
-    }
-
-    public List<Person> getAdultPersons() {
-        return List.of();
-    }
-
-    public List<String> getAdultPersonNames() {
-        return List.of();
+    public static void main(String[] args) {
+        for (Person person : PERSONS) {
+            String result;
+            switch (person.getGenre()) {
+                case M:
+                    result = "Mal";
+                    break;
+                case F:
+                    result = "Female";
+                    break;
+                default:
+                    result = "Unknown";
+            }
+            System.out.println(result);
+        }
     }
 }

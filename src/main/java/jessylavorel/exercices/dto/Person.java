@@ -13,4 +13,5 @@ public class Person {
     private String lastName;
     private String firstName;
     private int age;
+    private Genre genre;
 }
