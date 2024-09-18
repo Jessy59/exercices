@@ -7,6 +7,8 @@ import java.util.stream.IntStream;
  */
 public class FizzBuzz {
     public static void main(String[] args) {
+
+        // Using for loop
         for (int i = 1; i <= 100; i++) {
             if (i % 3 == 0 && i % 5 == 0)
                 System.out.println("FizzBuzz");
@@ -19,6 +21,7 @@ public class FizzBuzz {
 
         }
 
+        // Using stream api
         IntStream.rangeClosed(1, 100).
                 mapToObj(i -> {
                     if (i % 3 == 0 && i % 5 == 0) return "FizzBuzz";
