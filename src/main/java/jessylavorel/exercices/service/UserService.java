@@ -11,7 +11,6 @@ import java.util.List;
 /**
  * @author 20008590
  */
-@Service
 public class UserService {
 
     private static final int ADULT_AGE_LIMIT = 18;
