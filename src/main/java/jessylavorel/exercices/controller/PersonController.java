@@ -11,20 +11,24 @@ import java.util.List;
 /**
  * @author 20008590
  */
+@RestController
+@RequiredArgsConstructor
 public class PersonController {
 
+    private final UserService userService;
+
+    @GetMapping("/persons")
     public List<Person> getPersons() {
-        // TODO : call getPersons()
-        return List.of();
+        return userService.getAllPersons();
     }
 
+    @GetMapping("/adult-persons")
     public List<Person> getAdultPersons() {
-        // TODO : call getAdultPersons();
-        return List.of();
+        return userService.getAdultPersons();
     }
 
+    @GetMapping("/adult-persons/firstnames")
     public List<String> getAdultPersonFirstNames() {
-        // TODO : call getAdultPersonNames();
-        return List.of();
+        return userService.getAdultPersonNames();
     }
 }

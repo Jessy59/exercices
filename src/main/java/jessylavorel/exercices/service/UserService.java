@@ -1,7 +1,6 @@
 package jessylavorel.exercices.service;
 
 import jessylavorel.exercices.dto.Person;
-import org.apache.logging.log4j.util.Strings;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -29,10 +28,16 @@ public class UserService {
     }
 
     public List<Person> getAdultPersons() {
-        return List.of();
+        return PERSONS.stream()
+                .filter(person -> person.getAge()>=ADULT_AGE_LIMIT)
+                .sorted(Comparator.comparing(Person::getAge))
+                .toList();
     }
 
     public List<String> getAdultPersonNames() {
-        return List.of();
+        return getAdultPersons()
+                .stream()
+                .map(Person::getFirstName)
+                .toList();
     }
 }
