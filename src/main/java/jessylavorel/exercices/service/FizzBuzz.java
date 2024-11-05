@@ -1,7 +1,5 @@
 package jessylavorel.exercices.service;
 
-import java.util.stream.IntStream;
-
 /**
  * @author 20008590
  */
