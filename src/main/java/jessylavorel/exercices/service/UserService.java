@@ -1,11 +1,8 @@
 package jessylavorel.exercices.service;
 
 import jessylavorel.exercices.dto.Person;
-import org.apache.logging.log4j.util.Strings;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -31,7 +28,7 @@ public class UserService {
         return List.of();
     }
 
-    public List<String> getAdultPersonNames() {
+    public List<String> getAdultPersonFirstNames() {
         return List.of();
     }
 }
