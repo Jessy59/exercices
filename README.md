@@ -6,4 +6,4 @@
 - Si le nombre est divisible par 3, affichez "Fizz".
 - Si le nombre est divisible par 5, affichez "Buzz".
 - Si le nombre est divisible à la fois par 3 et par 5, affichez "FizzBuzz".
-- Sinon, affichez simplement le nombre.
+- Sinon, affichez simplement le nombre
